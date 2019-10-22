@@ -205,7 +205,29 @@ if (volhistory.length > width){
      colr.g1 = 36
       colr.b1 = 42
    }
-  
+
+   if (playTime >13000 && playTime < 18000){
+    colr.r1 = 11
+     colr.g1 = 23
+      colr.b1 = 49
+   }
+
+   if (playTime >18200 && playTime < 19300|| playTime> 20300 && playTime < 21300){
+    colr.r1 = 31
+     colr.g1 = 36
+      colr.b1 = 42
+   }
+
+   if (playTime >19300 && playTime < 20300 || playTime> 21300 && playTime < 22300){
+    colr.r1 = 50
+     colr.g1 = 43
+      colr.b1 = 53
+   }
+   if (playTime >22300 && playTime < 19300|| playTime> 20300 && playTime < 21300){
+    colr.r1 = 31
+     colr.g1 = 36
+      colr.b1 = 42
+   }
 
    // animation 
    if (playTime >8000 && playTime < 10000 ){
@@ -263,7 +285,7 @@ if (playTime > 23000 && playTime < 27000){
    spiral3();
 
    if (playTime > 67000 && playTime < 100000){
-    speed =.005;
+    speed =.01;
     speed2 = .002;
     speed3 = .003;
    }
@@ -277,7 +299,7 @@ if (playTime > 23000 && playTime < 27000){
 
    if (playTime > 120000 && playTime < 180000){
   
-    speed =.004;
+    speed =.04;
     speed2 = .006;
     speed3 = .09;
 
