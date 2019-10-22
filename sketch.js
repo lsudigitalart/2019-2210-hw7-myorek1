@@ -287,7 +287,7 @@ if (playTime > 23000 && playTime < 27000){
    if (playTime > 67000 && playTime < 100000){
     speed =.01;
     speed2 = .002;
-    speed3 = .003;
+    speed3 = .005;
    }
   
    if (playTime > 100000 && playTime < 120000){
@@ -297,10 +297,19 @@ if (playTime > 23000 && playTime < 27000){
     speed3 = .05;
    }
 
-   if (playTime > 120000 && playTime < 180000){
+   if (playTime > 120000 && playTime < 240000){
   
     speed =.04;
     speed2 = .006;
+    speed3 = .09;
+
+
+   }
+
+   if (playTime > 240000 && playTime < 360000){
+  
+    speed =.04;
+    speed2 = .02;
     speed3 = .09;
 
 
