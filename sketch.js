@@ -315,21 +315,21 @@ if (playTime > 23000 && playTime < 27000){
    if (playTime > 67000 && playTime < 100000){
     speed =.01;
     speed2 = .002;
-    speed3 = .05;
+    speed3 = .003;
    }
   
    if (playTime > 100000 && playTime < 120000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .09;
+    speed3 = .07;
    }
 
    if (playTime > 120000 && playTime < 180000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .1;
+    speed3 = .09;
    }
 
    if (playTime > 180000 && playTime < 240000){
