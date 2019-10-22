@@ -32,7 +32,7 @@ var col2 = {
 var angle3 =2.0;
 var offset3 = 300;
 var scalar3 = 3.5;
-var speed3 = .1;
+var speed3 = .003;
 var col3 = {
   r: 255,
   g: 255,
@@ -89,6 +89,12 @@ music.play();
 
 
   function draw() {
+
+    var vol = amp.getLevel();
+    volhistory.push(vol);
+
+
+
     fill(29,35,40);
     rect(0,450,800,800)
     fill(31,37,42);
@@ -97,11 +103,12 @@ music.play();
     rect(0,600,800,800)
     fill(38,42,50);
     rect(650,800,800)
+
+   
     //background(29,35,40);
 
     // draws a line in the background
-    var vol = amp.getLevel();
-    volhistory.push(vol);
+
     col.l = random(220,250);
     col.k = random(182, 228);
     col.d = random(200,250);
@@ -111,13 +118,13 @@ for (var i = 0; i < volhistory.length; i++){
   
   stroke (col.l, col.k,col.d);
   noFill();
-  var y  = map(volhistory[i], 0, 1,height, 0 )
-  point(i,y);
+  var t  = map(volhistory[i], 0, 3,height, 0 )
+  vertex(i,t);
 }
 endShape();
 
 if (volhistory.length > width){
-  volhistory.splice(2,5);
+  volhistory.splice(2,1);
 }
    
    
@@ -137,7 +144,7 @@ if (volhistory.length > width){
 //playtime
    playTime = millis() - loadtime;
 
-  
+  print(playTime)
    // animation 
    if (playTime >8000 && playTime < 10000 )
    speed = .01;
@@ -182,28 +189,32 @@ if (playTime > 23000 && playTime < 27000){
     speed2 = .04;
    }
 
-   if (playTime > 60000 && playTime < 100000){
+   if (playTime > 60000 && playTime < 67000){
     speed =.001;
     speed2 = .002;
    }
 
-   if (playTime > 90000 && playTime < 100000){
+   if (playTime > 67000 && playTime < 100000){
     spiral3();
-    speed3 = .02
+    speed =.005;
+    speed2 = .002;
+  
    }
   
    if (playTime > 100000 && playTime < 120000){
   
-    speed =.003;
-    speed2 = .002;
-    speed3 = .004;
+    speed =.01;
+    speed2 = .01;
+    speed3 = .05;
    }
 
    if (playTime > 120000 && playTime < 180000){
   
     speed =.004;
     speed2 = .006;
-    speed3 = .003;
+    speed3 = .09;
+
+
    }
    // spiral
 
