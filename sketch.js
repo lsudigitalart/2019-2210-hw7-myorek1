@@ -322,7 +322,7 @@ if (playTime > 23000 && playTime < 27000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .009;
+    speed3 = .01;
    }
 
    if (playTime > 120000 && playTime < 180000){
