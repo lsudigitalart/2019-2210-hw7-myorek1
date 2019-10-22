@@ -325,14 +325,21 @@ if (playTime > 23000 && playTime < 27000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .01;
+    speed3 = .007;
    }
 
-   if (playTime > 120000 && playTime < 240000){
+   if (playTime > 120000 && playTime < 180000){
+  
+    speed =.01;
+    speed2 = .01;
+    speed3 = .009;
+   }
+
+   if (playTime > 180000 && playTime < 240000){
   
     speed =.04;
     speed2 = .01;
-    speed3 = .08;
+    speed3 = .04;
 
 
    }
@@ -358,7 +365,7 @@ if (playTime > 23000 && playTime < 27000){
    if (playTime > 370000 && playTime < 460000){
      spiral4();
    }
-   
+
    if (playTime > 370000 && playTime < 460000){
   
     speed =.01;
