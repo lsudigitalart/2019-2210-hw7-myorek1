@@ -322,29 +322,21 @@ if (playTime > 23000 && playTime < 27000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .06;
+    speed3 = .05;
    }
 
    if (playTime > 120000 && playTime < 180000){
   
-    speed =.01;
-    speed2 = .01;
-    speed3 = .09;
+    speed =.06;
+    speed2 = .05;
+    speed3 = .08;
    }
 
-   if (playTime > 180000 && playTime < 240000){
-  
-    speed =.04;
-    speed2 = .01;
-    speed3 = .1;
-
-
-   }
 
    if (playTime > 240000 && playTime < 290000){
   
-    speed =.06;
-    speed2 = .04;
+    speed =.08;
+    speed2 = .07;
     speed3 = .06;
 
 
@@ -352,14 +344,14 @@ if (playTime > 23000 && playTime < 27000){
 
    if (playTime > 290000 && playTime < 370000){
   
-    speed =.01;
+    speed =.08;
     speed2 = .06;
     speed3 = .09;
 
 
    }
 
-   if (playTime > 370000 && playTime < 460000){
+   if (playTime > 240000 && playTime < 460000){
      spiral4();
    }
 
