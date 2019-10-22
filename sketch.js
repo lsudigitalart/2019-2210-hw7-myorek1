@@ -4,6 +4,13 @@ var loadtime;
 var playTime;
 var amp;
 
+var colb = 29;
+var c = 35;
+var d = 40;
+
+function back(){
+  background(colb,c,d);
+}
 var volhistory = [];
 
 // spiral
@@ -32,12 +39,27 @@ var col2 = {
 var angle3 =2.0;
 var offset3 = 300;
 var scalar3 = 3.5;
-var speed3 = .003;
+var speed3 = .1;
 var col3 = {
   r: 255,
   g: 255,
   b: 0,
 };
+
+// rectangle 
+
+var colr ={    
+  r1: 31,
+  g1: 36,
+  b1: 42,
+}
+
+
+function rez() {
+  var rectcol = fill(colr.r1, colr.g1, colr.b1)
+  rectcol;
+  rect(0,500,800,800);
+}
 
 
 function spiral2(){
@@ -76,7 +98,7 @@ function setup() {
 
   createCanvas(800,600);
   noStroke();
- background(29,35,40);
+  back();
 
   if (music.isLoaded()){
 loadtime = millis();
@@ -90,19 +112,25 @@ music.play();
 
   function draw() {
 
+
     var vol = amp.getLevel();
     volhistory.push(vol);
-
-
+  
+    
 
     fill(29,35,40);
     rect(0,450,800,800)
-    fill(31,37,42);
-    rect(0,500,800,800)
-    fill(34,38,47);
-    rect(0,600,800,800)
-    fill(38,42,50);
-    rect(650,800,800)
+   
+    fill(30,36,41);
+    rect(0,470,800,800);
+    
+    rez();
+    //rectcol;
+    //rect(0,500,800,800);
+    
+
+    fill(5);
+    rect(0,650,800,800)
 
    
     //background(29,35,40);
@@ -144,19 +172,56 @@ if (volhistory.length > width){
 //playtime
    playTime = millis() - loadtime;
 
-  print(playTime)
-   // animation 
-   if (playTime >8000 && playTime < 10000 )
-   speed = .01;
+   // square flashes to paino
+   if (playTime >0 && playTime < 1500 ||playTime >2500 && playTime < 3500  ){  
+    colr.r1 = 50
+     colr.g1 = 43
+      colr.b1 = 53
+   }
+   if (playTime >1500 && playTime < 2500 || playTime >3500 && playTime < 4500){
+    colr.r1 = 31
+     colr.g1 = 36
+      colr.b1 = 42
+   }
+
+   if (playTime >4500 && playTime < 5500 || playTime >6500 && playTime <  7500){
+    colr.r1 = 50
+     colr.g1 = 43
+      colr.b1 = 53
+   }
+   if (playTime >5500 && playTime < 6500 || playTime > 7500 && playTime<8500){
+    colr.r1 = 31
+     colr.g1 = 36
+      colr.b1 = 42
+   }
+
+   if (playTime >8500 && playTime < 10000 || playTime> 11000 && playTime < 12000){
+    colr.r1 = 50
+     colr.g1 = 43
+      colr.b1 = 53
+   }
+   if (playTime >10000 && playTime < 11000|| playTime> 12000 && playTime < 12500){
+    colr.r1 = 31
+     colr.g1 = 36
+      colr.b1 = 42
+   }
   
 
-if (playTime >90000 && playTime < 18000)
-speed = .0001
+   // animation 
+   if (playTime >8000 && playTime < 10000 ){
+   speed = .01;
 
+   }
+
+
+if (playTime >90000 && playTime < 18000){
+speed = .0001
+}
 
    if (playTime > 18000 ){
     speed =.07;
     spiral2();
+
    }
 
 if (playTime > 23000 && playTime < 27000){
@@ -194,11 +259,13 @@ if (playTime > 23000 && playTime < 27000){
     speed2 = .002;
    }
 
+   if (playTime >67000)
+   spiral3();
+
    if (playTime > 67000 && playTime < 100000){
-    spiral3();
     speed =.005;
     speed2 = .002;
-  
+    speed3 = .003;
    }
   
    if (playTime > 100000 && playTime < 120000){
