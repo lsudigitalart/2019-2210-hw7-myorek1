@@ -46,6 +46,18 @@ var col3 = {
   b: 0,
 };
 
+
+// spiral 4
+var angle4 =2.0;
+var offset4 = 300;
+var scalar4 = 3.5;
+var speed4 = .1;
+var col4 = {
+  r: 255,
+  g: 255,
+  b: 0,
+};
+
 // rectangle 
 
 var colr ={    
@@ -86,6 +98,19 @@ function spiral3(){
   ellipse(x, y, 5, 5);
   angle3 += speed3;
   scalar3 += speed3;
+}
+
+function spiral4(){
+  col3.r = random(247, 250);
+  col3.g = random(139, 150);
+  col3.b = random(248, 250);
+  var x = offset4 + cos(angle4) * scalar4;
+  var y = offset4 + sin(angle4) * scalar4;
+  fill(col4.r, col4.g, col4.b);
+  noStroke();
+  ellipse(x, y, 5, 5);
+  angle4 += speed4;
+  scalar4 += speed4;
 }
 
 function preload(){
@@ -223,11 +248,17 @@ if (volhistory.length > width){
      colr.g1 = 43
       colr.b1 = 53
    }
-   if (playTime >22300 && playTime < 19300|| playTime> 20300 && playTime < 21300){
+   if (playTime >22300 && playTime < 23300|| playTime> 24300 && playTime < 25300){
     colr.r1 = 31
      colr.g1 = 36
       colr.b1 = 42
    }
+   if (playTime >23300 && playTime < 24300 || playTime> 25300 && playTime < 26300){
+    colr.r1 = 50
+     colr.g1 = 43
+      colr.b1 = 53
+   }
+   
 
    // animation 
    if (playTime >8000 && playTime < 10000 ){
@@ -294,22 +325,44 @@ if (playTime > 23000 && playTime < 27000){
   
     speed =.01;
     speed2 = .01;
-    speed3 = .05;
+    speed3 = .01;
    }
 
    if (playTime > 120000 && playTime < 240000){
   
     speed =.04;
-    speed2 = .006;
+    speed2 = .01;
+    speed3 = .08;
+
+
+   }
+
+   if (playTime > 240000 && playTime < 290000){
+  
+    speed =.06;
+    speed2 = .04;
+    speed3 = .06;
+
+
+   }
+
+   if (playTime > 290000 && playTime < 370000){
+  
+    speed =.01;
+    speed2 = .06;
     speed3 = .09;
 
 
    }
 
-   if (playTime > 240000 && playTime < 360000){
+   if (playTime > 370000 && playTime < 460000){
+     spiral4();
+   }
+   
+   if (playTime > 370000 && playTime < 460000){
   
-    speed =.04;
-    speed2 = .02;
+    speed =.01;
+    speed2 = .04;
     speed3 = .09;
 
 
