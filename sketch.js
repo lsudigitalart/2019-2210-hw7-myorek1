@@ -101,9 +101,9 @@ function spiral3(){
 }
 
 function spiral4(){
-  col3.r = random(247, 250);
-  col3.g = random(139, 150);
-  col3.b = random(248, 250);
+  col4.r = random(247, 250);
+  col4.g = random(139, 150);
+  col4.b = random(248, 250);
   var x = offset4 + cos(angle4) * scalar4;
   var y = offset4 + sin(angle4) * scalar4;
   fill(col4.r, col4.g, col4.b);
@@ -351,7 +351,7 @@ if (playTime > 23000 && playTime < 27000){
 
    }
 
-   if (playTime > 240000 && playTime < 460000){
+   if (playTime > 220000 && playTime < 460000){
      spiral4();
    }
 
